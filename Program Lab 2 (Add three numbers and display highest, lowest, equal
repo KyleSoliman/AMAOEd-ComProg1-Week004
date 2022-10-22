@@ -22,11 +22,11 @@ int main()
     cout << "\n" << a << " + " << b << " + " << c << " = " << sum;
 
     // Check Highest Number
-    if ((a > b) && (a > c)) { 
+    if ((a >= b) && (a > c)) {
 
         cout << "\n" << a << " is the highest number";
     }
-    else if (b > a || b > 0) {
+    else if ((b > a) && (b > 0)) {
 
         cout << "\n" << b << " is the highest number";
 
@@ -40,7 +40,7 @@ int main()
 
         cout << "\n" << a << " is the lowest number";
     }
-    else if (b < c || b < 0) { // or to check zeros
+    else if ((b < c) || (b < 0)) { // or to check zeros
 
         cout << "\n" << b << " is the lowest number";
 
@@ -69,3 +69,10 @@ int main()
     }
     return 0;
 }
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
