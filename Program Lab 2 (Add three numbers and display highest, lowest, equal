@@ -1,6 +1,8 @@
 // Program Lab 2 Ver 2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 // Program Lab 2 Ver 2 added an adding code for three numbers
 // No errors fixed errors in highest number formula between b and c
+// it will now display that all numbers are equal or not
+//added a do while loop to let the user retry again.
 #include <iostream>
 
 using namespace std;
@@ -8,67 +10,76 @@ using namespace std;
 int main()
 {
     int a, b, c, sum;
+    char repeat = 'y';
 
-    cout << "Please input first number: ";
-    cin >> a;
+    do {
 
-    cout << "\nPlease input second number: ";
-    cin >> b;
+        cout << "Please input first number: ";
+        cin >> a;
 
-    cout << "\nPlease input third number: ";
-    cin >> c;
+        cout << "\nPlease input second number: ";
+        cin >> b;
 
-    sum = a + b + c;
+        cout << "\nPlease input third number: ";
+        cin >> c;
 
-    cout << "\n" << a << " + " << b << " + " << c << " = " << sum;
+        sum = a + b + c;
 
-    // Check Highest Number
-    if ((a > b) && (a > c)) {
+        cout << "\n" << a << " + " << b << " + " << c << " = " << sum;
 
-        cout << "\n" << a << " is the highest number";
-    }
-    else if (b > c) {
+        // Check Highest Number
+        if ((a > b) && (a > c)) { //Checks both if a is greater than b and if a is greater than c // If both is true then proceed with a as the highest number
 
-        cout << "\n" << b << " is the highest number";
+            cout << "\n" << a << " is the highest number";
+        }
+        else if (b > c) { // If first conditions is false check if b is greater than c / If true proceed with displaying b is the highest number
 
-    }
-    else {
-        cout << "\n" << c << " is the highest number";
-    }
+            cout << "\n" << b << " is the highest number"; 
 
-    // Check if lowest
-    if ((a < b) && (a < c)) {
+        }
+        else {
+            cout << "\n" << c << " is the highest number"; // If both conditions are false proceed with diplaying c as the highest number
+        }
 
-        cout << "\n" << a << " is the lowest number";
-    }
-    else if (b < c) { // or to check zeros
+        // Check if lowest
+        if ((a < b) && (a < c)) { // Same as the code above but use lower than sign
 
-        cout << "\n" << b << " is the lowest number";
+            cout << "\n" << a << " is the lowest number";
+        }
+        else if (b < c) { // or to check zeros
 
-    }
-    else {
+            cout << "\n" << b << " is the lowest number";
 
-        cout << "\n" << c << " is the lowest number";
-    }
+        }
+        else {
 
-    // Check if equal or not
+            cout << "\n" << c << " is the lowest number";
+        }
 
-    if (a == b) {
-        cout << "\n" << a << " is equal to " << b << endl;
-    }
-    else if (b == c) {
-        cout << "\n" << b << " is equal to " << c << endl;
+        // Check if equal or not
 
-    }
-    else if (a == c) {
+        if (a == b && a != c ) { // Checks if a is equal to b  if true then display code
+            cout << "\n" << "First and Second Number are Equal";
+        }
+        else if (b == c && a != c) { // if condition is false above check if b is equal to c 
+            cout << "\n" << "Second and Third Number are Equal" << endl;
 
-        cout << "\n" << a << " is equal to " << c << endl;
+        }
+        else if (a == c && b != c) { // Checks if a is equal to c
 
-    }
-    else {
-        cout << "\n" << "All numbers are different so...";
-    }
-    return 0;
+            cout << "\n" << a << " is equal to " << c << endl;
+
+        }
+        else if ((a == b) && (a == c)) {
+            cout << "\n" << "All numbers are equal...";
+        }
+        else {
+            cout << "\n" << "All numbers are different so...";
+        }
+        cout << "\n" << "\n\nTry again by pressing y or end the program by pressing n: " << endl;
+            cin >> repeat;
+    } while (repeat == 'y');
+    
 }
 // Tips for Getting Started: 
 //   1. Use the Solution Explorer window to add/manage files
