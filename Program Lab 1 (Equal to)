@@ -1,6 +1,6 @@
 // Program Lab 1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 // Create a program that that checks if the two input numbers is equal or the same
-// I think code can still be shorten if I used more logical operators.
+//
 #include <iostream>
 
 using namespace std;
@@ -15,13 +15,18 @@ int main() {
     cout << "Please Enter your second number: " << endl;
     cin >> b;
 
-    if (a == b) {
-
-        cout << "\n" << "First and Second Numbers are Equal";
+    // check if greater than or less than 
+    if (a > b) {
+        cout << a << " is greater than " << b << endl;
     }
-    else {
-        cout << "\n" << a << " is not equal to " << b;
+    else if (a < b) {
+        cout << "\n" << a << " is lower than " << b << endl;
     }
+    // Check if equal or not
+    else if (a == b) {
 
+        cout << "\n" << "First Number and Second Number are Equal";
+    }
+   
     return 0;
 }
