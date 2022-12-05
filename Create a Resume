@@ -1,0 +1,79 @@
+//Final Activity
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+int user_input, age;
+string fullname, birthday, address, phone_number, hobIn1, hobIn2, hobIn3 , educ_background;
+string skill1, skill2, skill3, job_title;
+char gender [6], civil_status [7], repeat = 'y', show_resume = 'u', email [30];
+do {
+cout << "\n" << endl;
+cout << "RESUME REGISTRATION" << endl;
+cout << "Type your full name: ";
+getline(cin, fullname);
+cout << "Type your Address: ";
+getline(cin, address);
+cout << "Type your Birthday [Day/Month/Year]: ";
+getline(cin, birthday);
+cout << "Type your 12 Digit Phone Number: ";
+getline (cin, phone_number);
+cout << "Type your Civil Status: ";
+cin >> civil_status;
+cout << "Type your Age: ";
+cin >> age;
+cout << "Type your gender: ";
+cin >> gender;
+cin.ignore();
+cout << "Educational Background [Latest]: ";
+getline (cin, educ_background);
+cout << "Type your skills [at least 3]: " << endl;
+getline (cin, skill1);
+getline (cin, skill2);
+getline (cin, skill3);
+cout << "Type your Hobbies/Interests: " << endl;
+getline (cin, hobIn1);
+getline (cin, hobIn2);
+getline (cin, hobIn3);
+cout << "What is your desired Job Title: ";
+getline (cin, job_title);
+cout << "Email: " << endl;
+cin >> email;
+cout << "\n" <<"Resume Complete!!! " << endl;
+cout << "\n" << "1. Show Resume" << endl;
+cout << "2. End Program" << endl;
+cin >> user_input;
+if (user_input == 2) {
+cout << "END PROGRAM" << endl;
+break;
+} else if (user_input == 1) {
+do {
+cout << "---------------------------------------------------------------" << endl;
+cout << " RESUME" << endl;
+cout << "\n" << "Name: " << fullname << endl;
+cout << "Age: " << age << endl;
+cout << "Gender: " << gender << endl;
+cout << "Civil Status: " << civil_status << endl;
+cout << "Address: " << address << endl;
+cout << "Birthday: " << birthday << endl;
+cout << "Phone Number: " << phone_number << endl;
+cout << "Email: " << email << endl;
+cout << "Educational Background: " << educ_background << "\n" << endl;
+cout << "Relevant Skills: " << "\n" << "1. " << skill1 << "\n" << "2. " << skill2 << "\n" << "3. "<< skill3 << "\n" << endl;
+cout << "Hobbies/Interests: " << "\n" << "1. " << hobIn1 << "\n" << "2. " << hobIn2 << "\n" << "3. "<< hobIn3 << endl;
+cout << "\n" <<"Desired Job Title: " << job_title;
+cout << "\n" << " \n " << endl;
+cout << "\n" << "Show resume again by pressing [u] then enter" << endl;
+cout << "Press any key then press [enter] to continue... " << endl;
+cin >> show_resume;
+cin.ignore();
+} while (show_resume == 'u');
+cout << "\n" <<"Press any key to end program or..." << endl;
+}
+cout << "Create a new resume by pressing [y]" << "\n" << endl;
+cin >> repeat;
+cin.ignore();
+} while (repeat == 'y');
+}
+
